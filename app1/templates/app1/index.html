@@ -1,0 +1,60 @@
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<body background="{% static 'app1/images/flowers.jpg'%}">
+<div class="container">
+
+    <div class="row">
+            <img src="{% static 'app1/images/picfood2.jpg' %}" style="width:95%; height:50%;">
+        </div>
+    {%for prof in profiles%}
+    <div class="row">
+
+
+       <div class="col-sm-3">
+            <!-- Left column: logo and menu -->
+                    <div class="panel panel-default">
+
+
+
+                    </div>
+           <!-- Left column: logo and menu -->
+
+
+       </div>
+
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+
+                        <img src="{{prof.photos.url}}" class="rounded-circle mx-auto img-fluid" alt="" style="height:300px; width:95%;">
+
+                    <div class="caption" style="margin=3px;">
+                        <h5>{{prof.name}}</h5>
+                        <h6>{{prof.title}}</h6>
+                         <p>{{prof.post}}</p>
+                        <a href="" class="btn btn-primary btn-sm">
+                            <i class="fas fa-share-alt"></i>
+                        </a>
+                        <a href="" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                        <a href="" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-comment"></i>
+                        </a>
+                        <a href="" class="btn btn-danger btn-sm" style="float:right;"  onclick='return confirm("Are you sure you want to delete this album?")'>
+                            <i class="fas fa-trash"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        <div class="col-sm-3">
+
+        </div>
+
+
+    </div>
+    {%endfor%}
+</div>
+</body>
